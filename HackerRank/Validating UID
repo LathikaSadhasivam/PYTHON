@@ -1,0 +1,33 @@
+import re
+
+def is_valid_uid(uid):
+  
+    if len(uid) != 10:
+        return False
+    
+    # Check if all characters are alphanumeric
+    if not uid.isalnum():
+        return False
+    
+    # Check if there is at least one uppercase letter
+    if not any(char.isupper() for char in uid):
+        return False
+    
+    # Check if there is at least one digit
+    if not any(char.isdigit() for char in uid):
+        return False
+    
+    # Check if all characters are unique
+    if len(set(uid)) != len(uid):
+        return False
+    
+    return True
+
+if __name__ == '__main__':
+    t = int(input())  # Number of test cases
+    for _ in range(t):
+        uid = input()  # Read UID
+        if is_valid_uid(uid):
+            print("Valid")
+        else:
+            print("Invalid")
