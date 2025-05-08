@@ -1,0 +1,13 @@
+if __name__ == '__main__':
+    n = int(input())  # Number of students
+    student_marks = {}
+    
+    # Input student records
+    for _ in range(n):
+        name, *line = input().split()  # Read name and marks (marks are split into a list)
+        scores = list(map(float, line))  # Convert marks to a list of floats
+        student_marks[name] = scores  # Store the name and their marks in the dictionary
+    
+    # Input the query name
+    query_name = input()
+    
