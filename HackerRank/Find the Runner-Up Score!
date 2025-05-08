@@ -1,0 +1,7 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    unique_scores = sorted(set(arr), reverse=True)
+    
+    # The runner-up score is the second highest, so it's at index 1 in the sorted list
+    print(unique_scores[1])
